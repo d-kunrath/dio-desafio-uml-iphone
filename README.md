@@ -1,28 +1,50 @@
 ```mermaid
----
-title: Animal example
----
-classDiagram
-    note "From Duck till Zebra"
-    Animal <|-- Duck
-    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
+    iPhone --> ReprodutorMusical
+    iPhone --> AparelhoTelefonico
+    iPhone --> NavegadorNaInternet
+    SensoresAparelho --|> iPhone
+
+    class SensoresAparelho {
+        <<interface>>
+        #deslizarParaCima()
+        #deslizarParaBaixo()
+        #deslizarParaEsquerda()
+        #deslizarParaDireita()
+        #desligarTela()
+        #ligarTela()
+        #virarTela()
+        #alterarVolume()
     }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
+
+    class ReprodutorMusical {
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
+        +selecionarFilme(String filme)
+        +selecionarVideoClipe(String video)
+        +atribuirNota(number nota)
+        +verAlbuns()
     }
-    class Zebra{
-        +bool is_wild
-        +run()
+
+    class AparelhoTelefonico {
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
+        +sincronizarContantos()
+        +salvarFavorito(String numero)
+        +enviarMensagem(String numero, String mensagem)
+        +abrirAlbumFotos()
     }
+
+    class NavegadorNaInternet {
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +removerAba(number abaId)
+        +atualizarPagina()
+        +verClima()
+        +verAcoes()
+        +abrirMapas()
+        +abrirEmail()
+    }
+
 ```
